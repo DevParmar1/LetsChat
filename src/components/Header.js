@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
-function Header() {
+function Header({user, signOut}) {
     return (
         <Container>
             <Main>
@@ -17,9 +17,9 @@ function Header() {
             </Main>
 
             <UserContainer>
-                <Name>Dev</Name>
-                <UserImage>
-                <img src="https://i.imgur.com/6VBx3io.png" />
+                <Name>{user.name}</Name>
+                <UserImage onClick={signOut}>
+                <img src={user.photo ? user.photo : ""} />
                 </UserImage>
                 
         </UserContainer>
@@ -31,7 +31,9 @@ export default Header
 
 
 const Container = styled.div`
-background:#350d36;
+background-color: #1b0029;
+background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-big.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 color:white;
 display:flex;
 align-items: center;
@@ -94,6 +96,7 @@ width:28px;
 height:28px;
 border: 2px solid white;
 border-radius:3px;
+cursor:pointer;
 
 img{
     width:100%;
