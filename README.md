@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Lets Chat 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Group Chat App having dynamic channels built using React.js as frontend and firebase for G-Auth and real time database.
 
 ## Available Scripts
 
